@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Relays</title>
+	<meta charset = "utf-8">
+	
+	<style type = "text/css">
+		body {
+			color:#333;
+			background: #eee;
+			font-family:Arial;
+			font-size:1em;
+		}
+		h3 {
+			color:gray;
+			margin-bottom:0;
+			margin-top:30px;
+		}
+		#wrapper, #banner {
+			width:500px;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:0px;
+			margin-bottom:0px;
+			border-right:solid 1px silver;
+			border-left:solid 1px silver;
+			background:silver;
+			padding:10px;
+		}
+		#banner {
+			text-align:center;
+			color:white;
+			background:teal;
+			margin-top:25px;
+		}
+		#form1 {
+			height:110px;
+			margin-left:64px;			
+			margin-top:10px;
+			padding:5px;
+			color:teal;
+		
+		}
+		.figure {
+			float:left;			
+			padding:10px;
+		}
+		.figure p {
+			text-align:center;
+			margin-top:2px;
+			font-size:.8em;
+		}
+		.figure input {
+			width:70px;
+		}
+
+	</style>
+	
+	<script>
+	window.onload = function(){	
+		r1Button=document.getElementById("relay1");
+		r2Button=document.getElementById("relay2");
+		r3Button=document.getElementById("relay3");
+		r4Button=document.getElementById("relay4");
+
+		r1Button.src=(<%=relayStatus[0] %>==1 ) ? "/images/buttonOn.png":"/images/buttonOff.png";
+		r2Button.src=(<%=relayStatus[1] %>==1 ) ? "/images/buttonOn.png":"/images/buttonOff.png";
+		r3Button.src=(<%=relayStatus[2] %>==1 ) ? "/images/buttonOn.png":"/images/buttonOff.png";
+		r4Button.src=(<%=relayStatus[3] %>==1 ) ? "/images/buttonOn.png":"/images/buttonOff.png";										
+	}					
+	</script>
+</head>
+<body>
+	<h1 id="banner">Relays</h1>
+	<div id="wrapper">
+		<form id="form1" method="post">		
+			<div class="figure"><input type='image' value='submit' id="relay1"  
+				name="relay1" method="post" formaction="/relay1"/><p>Fan</p></div>
+			<div class="figure"><input type='image' value='submit' id="relay2"
+				name="relay2" method="post" formaction="/relay2"/><p>Lamp</p></div>
+			<div class="figure"><input type='image' value='submit' id="relay3" 
+				name="relay3" method="post" formaction="/relay3"><p>Alarm</p></p></div>
+			<div class="figure"><input type='image' value='submit' id="relay4"
+				name="relay4" method="post" formaction="/relay4"><p>Sprinkler</p></div>		
+		</form>
+	</div>
+</body>	
+</html>
+	
