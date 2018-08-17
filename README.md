@@ -1,2 +1,2 @@
 # Switches
-Control relays connected to Rpi GPIO with a web interface based on nodejs, javascript, and html
+Remotely control relays connected to Rpi GPIO using a web interface. Uses nodejs, javascript, and html.
